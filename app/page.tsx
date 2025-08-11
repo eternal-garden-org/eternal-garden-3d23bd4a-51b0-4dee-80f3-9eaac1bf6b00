@@ -5,31 +5,45 @@ import { MemorialInfo } from "@/components/memorial-info";
 import { MemorialBio } from "@/components/memorial-bio";
 import { MemorialQuotes } from "@/components/memorial-quotes";
 import { MemorialMedia } from "@/components/memorial-media";
-import { MemorialPhotos } from "@/components/memorial-photos";
+import { MemorialPhotosGallery } from "@/components/memorial-photos-gallery";
 import { MemorialWords } from "@/components/memorial-words";
 import { MemorialContacts } from "@/components/memorial-contacts";
+import { MemorialAudio } from "@/components/memorial-audio";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <PageLayout backgroundImage="/images/background.png">
+    <PageLayout>
+      <MemorialHeader
+        fullName="Александр Викторович Карпук"
+        birthDate="1970-06-11"
+        deathDate="2025-08-05"
+        photoUrl="https://rfuuxxxcubnqezacyouv.supabase.co/storage/v1/object/public/memorial-media/memorials/3d23bd4a-51b0-4dee-80f3-9eaac1bf6b00/photo/1754929507313_main_image_3.png"
+        birthPlace="Солигорск, Беларусь"
+        deathPlace="Брест, Беларусь"
+        backgroundImage="https://rfuuxxxcubnqezacyouv.supabase.co/storage/v1/object/public/memorial-media/memorials/3d23bd4a-51b0-4dee-80f3-9eaac1bf6b00/photo/1754929528193_bg_image_3.png"
+      />
       <Container>
-        <MemorialHeader
-          fullName="FIRST_NAME MIDDLE_NAME LAST_NAME"
-          birthDate="1964-06-15"
-          deathDate="2024-10-09"
-          photoUrl="https://zqqyhudmcjwubslcaznh.supabase.co/storage/v1/object/public/memorial_photos/memorial/l_i25vXr5z2_g-o9AtgBp.png"
-          birthPlace="Телеханы, Беларусь"
-          deathPlace="Брест, Беларусь"
+        <MemorialBio 
+          firstName="Александр"
+          lastName="Карпук"
         />
-        <MemorialInfo />
-        <MemorialBio />
+        <MemorialPhotosGallery />
+        <MemorialInfo 
+          firstName="Александр"
+        />
       </Container>
-      <MemorialQuotes />
+      <MemorialQuotes 
+        firstName="Александр"
+        middleName="Викторович"
+      />
       <Container>
         <MemorialMedia />
-        <MemorialPhotos />
-        <MemorialWords />
+        <MemorialAudio />
+        <MemorialWords 
+          firstName="Александр"
+          lastName="Карпук"
+        />
         <MemorialContacts />
       </Container>
       <Footer />

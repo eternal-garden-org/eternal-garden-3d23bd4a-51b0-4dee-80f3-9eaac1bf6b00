@@ -1,53 +1,82 @@
+"use client";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 interface MemorialBioProps {
+  firstName: string;
+  lastName: string;
   className?: string;
 }
 
-export function MemorialBio({ className }: MemorialBioProps) {
+export function MemorialBio({ firstName, lastName, className }: MemorialBioProps) {
   return (
     <div className={cn("w-full py-16", className)}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-3">
-          <h2 className="text-4xl font-medium">Семья</h2>
-          <p className="text-base text-muted-foreground">
-            FIRST_NAME прожил счастливую жизнь с женой Ольгой Сергеевной. Вместе
-            они воспитали двоих замечательных детей — Виктора и Елену. Виктор
-            пошёл по стопам отца, став инженером, а Елена выбрала медицину и
-            стала врачом. У FIRST_NAMEа было трое внуков, которых он обожал:
-            Максим, Полина и София. Он всегда говорил, что внуки — это главный
-            подарок жизни.
-          </p>
-        </div>
+      <Accordion type="single" collapsible defaultValue="biography" className="space-y-5">
+        <AccordionItem 
+          value="biography" 
+          className="border rounded-lg px-6 data-[state=open]:border-white"
+          style={{ borderColor: "#2D2D2D" }}
+        >
+          <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>
+            Биография
+          </AccordionTrigger>
+          <AccordionContent>
+            <Typography.P className="!mt-0" style={{ fontSize: "16px", color: "#8B8B8B" }}>
+              Александр Викторович Карпук родился в Бресте. С ранних лет он проявлял интерес к науке и искусству. 
+              После окончания школы Александр поступил в университет, где изучал инженерное дело. 
+              В своей карьере он достиг значительных успехов, работая над различными проектами в области технологий. 
+              В свободное время Александр увлекается фотографией и путешествиями, что позволяет ему открывать 
+              новые горизонты и вдохновляться окружающим миром.
+            </Typography.P>
+          </AccordionContent>
+        </AccordionItem>
 
-        <div className="space-y-3">
-          <h2 className="text-4xl font-medium">Кем он был</h2>
-          <div className="text-base text-muted-foreground space-y-4">
-            <p>
-              По профессии FIRST_NAME был архитектором, и его работы до сих пор
-              украшают Брест. Главная площадь города, несколько школ, жилые
-              кварталы — всё это носит отпечаток его таланта. Он обожал своё
-              дело и часто говорил: "Архитектор не просто строит дома, он
-              создаёт места, где рождаются истории."
-            </p>
-            <p>
-              Но его жизнь — это не только чертежи и проекты. FIRST_NAME любил
-              проводить время с семьёй, играть в шахматы и читать исторические
-              романы. Его особенной страстью был сад — во дворе всегда цвели
-              розы, которые он ухаживал с особой любовью.
-            </p>
-          </div>
-        </div>
+        <AccordionItem 
+          value="hobbies" 
+          className="border rounded-lg px-6 data-[state=open]:border-white"
+          style={{ borderColor: "#2D2D2D" }}
+        >
+          <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>
+            Увлечения
+          </AccordionTrigger>
+          <AccordionContent>
+            <Typography.P className="!mt-0" style={{ fontSize: "16px", color: "#8B8B8B" }}>
+              {firstName} был человеком с разносторонними интересами. Он увлекался фотографией, 
+              особенно любил снимать архитектуру и природу. Путешествия были его страстью – 
+              он объездил множество стран, изучая их культуру и традиции. В свободное время 
+              любил играть в шахматы, считая эту игру отличной тренировкой для ума. 
+              Также {firstName} с удовольствием работал в саду, выращивая розы и создавая 
+              ландшафтные композиции вокруг дома.
+            </Typography.P>
+          </AccordionContent>
+        </AccordionItem>
 
-        <div className="space-y-3">
-          <h2 className="text-4xl font-medium">Каким он был</h2>
-          <p className="text-base text-muted-foreground">
-            Его знали как человека с добрым сердцем и невероятной щедростью. Он
-            всегда находил время для друзей, был душой компании и мастером
-            анекдотов.
-          </p>
-        </div>
-      </div>
+        <AccordionItem 
+          value="education" 
+          className="border rounded-lg px-6 data-[state=open]:border-white"
+          style={{ borderColor: "#2D2D2D" }}
+        >
+          <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>
+            Образование
+          </AccordionTrigger>
+          <AccordionContent>
+            <Typography.P className="!mt-0" style={{ fontSize: "16px", color: "#8B8B8B" }}>
+              {firstName} окончил Брестский государственный технический университет по специальности 
+              "Промышленное и гражданское строительство". Позже получил дополнительное образование 
+              в области архитектуры и дизайна. На протяжении всей карьеры продолжал совершенствовать 
+              свои знания, регулярно посещая профессиональные курсы и семинары. Был членом 
+              Союза архитекторов Беларуси и активно участвовал в профессиональных конференциях.
+            </Typography.P>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }
