@@ -87,7 +87,7 @@ export function MemorialWords({ firstName, lastName, className }: MemorialWordsP
         className="w-full mx-auto"
       >
         <CarouselContent>
-          {wordsData.map((word, index) => (
+          {wordsData.map((word) => (
             <CarouselItem key={word.id} className="basis-full">
               <div 
                 className="p-8 rounded-lg"

@@ -15,7 +15,7 @@ interface MemorialBioProps {
   className?: string;
 }
 
-export function MemorialBio({ firstName, lastName, className }: MemorialBioProps) {
+export function MemorialBio({ firstName, className }: MemorialBioProps) {
   return (
     <div className={cn("w-full py-16", className)}>
       <Accordion type="single" collapsible defaultValue="biography" className="space-y-5">

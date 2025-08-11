@@ -6,7 +6,7 @@ interface MemorialInfoProps {
   className?: string;
 }
 
-export function MemorialInfo({ firstName, className }: MemorialInfoProps) {
+export function MemorialInfo({ className }: MemorialInfoProps) {
   return (
     <div className={cn("w-full py-16", className)}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
