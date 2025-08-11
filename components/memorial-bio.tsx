@@ -21,7 +21,7 @@ export function MemorialBio({ firstName, className }: MemorialBioProps) {
       <Accordion type="single" collapsible defaultValue="biography" className="space-y-5">
         <AccordionItem 
           value="biography" 
-          className="border rounded-lg px-6 data-[state=open]:border-white"
+          className="border-b border rounded-lg px-6 data-[state=open]:border-white"
           style={{ borderColor: "#2D2D2D" }}
         >
           <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>
@@ -40,7 +40,7 @@ export function MemorialBio({ firstName, className }: MemorialBioProps) {
 
         <AccordionItem 
           value="hobbies" 
-          className="border rounded-lg px-6 data-[state=open]:border-white"
+          className="border-b border rounded-lg px-6 data-[state=open]:border-white"
           style={{ borderColor: "#2D2D2D" }}
         >
           <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>
@@ -60,7 +60,7 @@ export function MemorialBio({ firstName, className }: MemorialBioProps) {
 
         <AccordionItem 
           value="education" 
-          className="border rounded-lg px-6 data-[state=open]:border-white"
+          className="border-b border rounded-lg px-6 data-[state=open]:border-white"
           style={{ borderColor: "#2D2D2D" }}
         >
           <AccordionTrigger className="text-white font-bold hover:no-underline [&>svg]:text-muted-foreground" style={{ fontSize: "20px" }}>

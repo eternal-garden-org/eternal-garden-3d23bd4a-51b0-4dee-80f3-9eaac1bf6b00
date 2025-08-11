@@ -53,7 +53,7 @@ export function MemorialQuotes({ firstName, middleName, className }: MemorialQuo
   }, [api]);
 
   return (
-    <div className={cn("w-full py-16", className)}>
+    <div className={cn("w-full py-16 overflow-visible", className)}>
       <Carousel
         opts={{
           align: "center",
@@ -61,15 +61,15 @@ export function MemorialQuotes({ firstName, middleName, className }: MemorialQuo
           skipSnaps: false,
         }}
         setApi={setApi}
-        className="w-full mx-auto"
+        className="w-full mx-auto overflow-visible"
       >
         <CarouselContent>
           {quotes.map((quote, index) => (
             <CarouselItem key={index} className="basis-full max-w-6xl">
-              <div className="mx-4 relative">
+              <div className="mx-4 relative pt-6 pb-8 overflow-visible">
                 {/* Author Badge */}
                 <div 
-                  className="absolute left-1/2 -translate-x-1/2 -top-3 z-10 inline-flex items-center px-4 py-1 rounded-full"
+                  className="absolute left-1/2 -translate-x-1/2 top-0 z-10 inline-flex items-center px-4 py-1 rounded-full"
                   style={{ backgroundColor: "#F6B95A" }}
                 >
                   <span className="text-black font-light" style={{ fontSize: "14px" }}>
@@ -80,12 +80,13 @@ export function MemorialQuotes({ firstName, middleName, className }: MemorialQuo
                 {/* Quote Block */}
                 <div
                   className={cn(
-                    "relative p-8 md:p-12 rounded-lg transition-all duration-500 overflow-visible",
+                    "relative p-8 md:p-12 rounded-lg transition-all duration-500 mt-3",
                     index === current ? "opacity-100" : "opacity-0"
                   )}
                   style={{ 
                     backgroundColor: "#2D2D2D",
                     backgroundImage: `linear-gradient(rgba(45, 45, 45, 0.8), rgba(45, 45, 45, 0.8))`,
+                    overflow: "visible"
                   }}
                 >
                   {/* Top Quote Icon */}
